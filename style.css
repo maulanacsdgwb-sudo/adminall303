@@ -954,3 +954,39 @@ tbody tr:hover {
     flex-direction: column;
   }
 }
+
+/* PERBAIKAN WARNA DROPDOWN HADIAH */
+
+select {
+  color: #fff3fb;
+  background-color: #19061f;
+  border: 1px solid #ff3cac;
+}
+
+/* Warna daftar pilihan saat dropdown dibuka */
+select option {
+  color: #2b001c;
+  background-color: #ffffff;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 16px;
+}
+
+/* Pilihan pertama */
+select option[value=""] {
+  color: #8b6b82;
+}
+
+/* Saat option dipilih */
+select option:checked {
+  color: #ffffff;
+  background: #d12b8c;
+}
+
+/* Fokus dropdown */
+select:focus {
+  color: #ffffff;
+  border-color: #ff9bdd;
+  box-shadow:
+    0 0 0 3px rgba(255, 60, 172, 0.12),
+    0 0 20px rgba(255, 60, 172, 0.55);
+}
