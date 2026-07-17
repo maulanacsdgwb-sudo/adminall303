@@ -1,350 +1,68 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-  <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<meta charset="UTF-8">
 
-  <title>LVtogel Admin Panel</title>
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
+<title>Lucky Spin Admin Login</title>
+
+<link rel="stylesheet" href="css/login.css">
+
 </head>
 
 <body>
 
-  <!-- LOGIN ADMIN -->
-  <main id="loginPage" class="page login-page">
-    <section class="login-card">
+<div class="login-box">
 
-      <div class="corner corner-top-left"></div>
-      <div class="corner corner-top-right"></div>
-      <div class="corner corner-bottom-left"></div>
-      <div class="corner corner-bottom-right"></div>
+<img
+src="assets/logo/logo.png"
+class="logo">
 
-      <div class="brand">
-        <div class="brand-logo">LVtogel</div>
-        <div class="brand-label">ADMIN PORTAL</div>
-      </div>
+<h1>LUCKY SPIN</h1>
 
-      <h1>AU328</h1>
-      <p class="subtitle">Lucky Spin Bonus Panel</p>
+<p>ADMIN PANEL</p>
 
-      <div class="divider">
-        <span></span>
-        <i></i>
-        <span></span>
-      </div>
+<form id="loginForm">
 
-      <form id="loginForm">
+<div class="input-group">
 
-        <div class="form-group">
-          <label for="adminUsername">Username</label>
+<label>Username</label>
 
-          <div class="input-wrapper">
-            <span class="input-icon">♙</span>
+<input
+type="text"
+id="username"
+placeholder="Masukkan Username">
 
-            <input
-              type="text"
-              id="adminUsername"
-              placeholder="Masukkan username"
-              autocomplete="username"
-              required
-            >
-          </div>
-        </div>
+</div>
 
-        <div class="form-group">
-          <label for="adminPassword">Password</label>
+<div class="input-group">
 
-          <div class="input-wrapper">
-            <span class="input-icon">⌑</span>
+<label>Password</label>
 
-            <input
-              type="password"
-              id="adminPassword"
-              placeholder="Masukkan password"
-              autocomplete="current-password"
-              required
-            >
+<input
+type="password"
+id="password"
+placeholder="Masukkan Password">
 
-            <button
-              type="button"
-              id="togglePassword"
-              class="toggle-password"
-              aria-label="Tampilkan password"
-            >
-              👁
-            </button>
-          </div>
-        </div>
+</div>
 
-        <button type="submit" class="gold-button">
-          Masuk ke Dashboard
-        </button>
+<button>
 
-        <p id="loginMessage" class="message"></p>
-      </form>
-    </section>
+LOGIN
 
-    <footer class="login-footer">
-      LVtogel © 2026 — Lucky Spin Admin Panel
-    </footer>
-  </main>
+</button>
 
+</form>
 
-  <!-- DASHBOARD ADMIN -->
-  <main id="dashboardPage" class="page dashboard-page hidden">
+</div>
 
-    <header class="dashboard-header">
-      <div class="dashboard-brand">
-        <div class="mini-logo">LVtogel</div>
+<script src="js/login.js"></script>
 
-        <div>
-          <h2>LVtogel</h2>
-          <p>Admin Panel — Lucky Spin Bonus</p>
-        </div>
-      </div>
-
-      <div class="admin-actions">
-        <span id="currentAdmin" class="admin-name"></span>
-
-        <button id="logoutButton" class="logout-button">
-          Logout
-        </button>
-      </div>
-    </header>
-
-    <section class="dashboard-container">
-
-      <nav class="tabs">
-        <button
-          type="button"
-          class="tab-button active"
-          data-tab="generatorTab"
-        >
-          Generate Kode
-        </button>
-
-        <button
-          type="button"
-          class="tab-button"
-          data-tab="historyTab"
-        >
-          Riwayat
-        </button>
-      </nav>
-
-
-      <!-- GENERATOR -->
-      <section id="generatorTab" class="tab-content active">
-
-        <div class="panel-card">
-          <div class="panel-heading">
-            <div>
-              <p class="eyebrow">LUCKY SPIN</p>
-              <h3>Generate Kode Bonus</h3>
-            </div>
-
-            <span class="status-badge">ADMIN</span>
-          </div>
-
-          <form id="generateForm">
-
-            <div class="form-grid">
-
-              <div class="form-group">
-                <label for="memberUsername">
-                  Username Member
-                </label>
-
-                <input
-                  type="text"
-                  id="memberUsername"
-                  placeholder="Contoh: member123"
-                  required
-                >
-              </div>
-
-              <div class="form-group">
-                <label for="rewardSelect">
-                  Pilih Hadiah
-                </label>
-
-                <select id="rewardSelect" required>
-                  <option value="">Pilih hadiah</option>
-                  <option value="ZONK">ZONK</option>
-                  <option value="Bonus Saldo Rp10.000">
-                    Bonus Saldo Rp10.000
-                  </option>
-                  <option value="Bonus Saldo Rp20.000">
-                    Bonus Saldo Rp20.000
-                  </option>
-                  <option value="Bonus Saldo Rp50.000">
-                    Bonus Saldo Rp50.000
-                  </option>
-                  <option value="Bonus Saldo Rp100.000">
-                    Bonus Saldo Rp100.000
-                  </option>
-                  <option value="Freebet Rp25.000">
-                    Freebet Rp25.000
-                  </option>
-                  <option value="Freebet Rp50.000">
-                    Freebet Rp50.000
-                  </option>
-                  <option value="Jackpot Rp500.000">
-                    Jackpot Rp500.000
-                  </option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="expiredDate">
-                  Masa Berlaku
-                </label>
-
-                <input
-                  type="datetime-local"
-                  id="expiredDate"
-                  required
-                >
-              </div>
-
-              <div class="form-group">
-                <label for="spinAmount">
-                  Jumlah Spin
-                </label>
-
-                <select id="spinAmount">
-                  <option value="1">1 Kali Spin</option>
-                  <option value="2">2 Kali Spin</option>
-                  <option value="3">3 Kali Spin</option>
-                </select>
-              </div>
-
-              <div class="form-group full-width">
-                <label for="adminNote">
-                  Catatan Admin
-                </label>
-
-                <textarea
-                  id="adminNote"
-                  rows="3"
-                  placeholder="Catatan opsional untuk kode ini"
-                ></textarea>
-              </div>
-            </div>
-
-            <button type="submit" class="gold-button generate-button">
-              Generate Kode
-            </button>
-          </form>
-        </div>
-
-
-        <!-- HASIL KODE -->
-        <section id="codeResult" class="code-result hidden">
-          <div class="result-top">
-            <div>
-              <p class="eyebrow">KODE BERHASIL DIBUAT</p>
-              <h3>Lucky Spin Member</h3>
-            </div>
-
-            <span class="active-badge">AKTIF</span>
-          </div>
-
-          <div class="generated-code-box">
-            <span>Kode Bonus</span>
-
-            <strong id="generatedCode">
-              LVtogel-LS-XXXXXX
-            </strong>
-
-            <button
-              type="button"
-              id="copyCodeButton"
-              class="copy-button"
-            >
-              Salin Kode
-            </button>
-          </div>
-
-          <div class="result-details">
-            <div>
-              <span>Username</span>
-              <strong id="resultUsername">-</strong>
-            </div>
-
-            <div>
-              <span>Hadiah</span>
-              <strong id="resultReward">-</strong>
-            </div>
-
-            <div>
-              <span>Jumlah Spin</span>
-              <strong id="resultSpin">-</strong>
-            </div>
-
-            <div>
-              <span>Kadaluarsa</span>
-              <strong id="resultExpired">-</strong>
-            </div>
-          </div>
-
-          <p id="copyMessage" class="copy-message"></p>
-        </section>
-      </section>
-
-
-      <!-- RIWAYAT -->
-      <section id="historyTab" class="tab-content">
-
-        <div class="panel-card">
-          <div class="history-heading">
-            <div>
-              <p class="eyebrow">DATA LOKAL</p>
-              <h3>Riwayat Kode Bonus</h3>
-            </div>
-
-            <button
-              type="button"
-              id="deleteAllButton"
-              class="danger-button"
-            >
-              Hapus Semua
-            </button>
-          </div>
-
-          <div class="table-container">
-            <table>
-              <thead>
-                <tr>
-                  <th>Kode</th>
-                  <th>Member</th>
-                  <th>Hadiah</th>
-                  <th>Spin</th>
-                  <th>Kadaluarsa</th>
-                  <th>Status</th>
-                  <th>Aksi</th>
-                </tr>
-              </thead>
-
-              <tbody id="historyTableBody">
-                <!-- Diisi oleh JavaScript -->
-              </tbody>
-            </table>
-          </div>
-
-          <p id="emptyHistory" class="empty-history">
-            Belum ada kode yang dibuat.
-          </p>
-        </div>
-      </section>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
 </body>
+
 </html>
