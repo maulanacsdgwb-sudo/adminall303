@@ -1295,3 +1295,82 @@ tbody tr:hover {
     transition-duration: 0.01ms !important;
   }
 }
+
+.input-error {
+  border-color: var(--danger) !important;
+  box-shadow:
+    0 0 0 3px rgba(255, 102, 127, 0.08),
+    0 0 15px rgba(255, 102, 127, 0.25) !important;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 86px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status-active {
+  color: var(--success);
+  background: rgba(100, 239, 180, 0.08);
+  border: 1px solid rgba(100, 239, 180, 0.25);
+}
+
+.status-used {
+  color: var(--warning);
+  background: rgba(255, 197, 92, 0.08);
+  border: 1px solid rgba(255, 197, 92, 0.25);
+}
+
+.status-expired {
+  color: var(--danger);
+  background: rgba(255, 102, 127, 0.08);
+  border: 1px solid rgba(255, 102, 127, 0.25);
+}
+
+.table-code {
+  color: var(--pink-light);
+  font-family: "Orbitron", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.table-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.table-copy-button,
+.table-delete-button {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border-radius: 8px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.table-copy-button {
+  background: rgba(255, 60, 172, 0.08);
+  border: 1px solid rgba(255, 60, 172, 0.25);
+}
+
+.table-delete-button {
+  background: rgba(255, 102, 127, 0.08);
+  border: 1px solid rgba(255, 102, 127, 0.25);
+}
+
+.table-copy-button:hover,
+.table-delete-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+}
