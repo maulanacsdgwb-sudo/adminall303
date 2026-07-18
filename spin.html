@@ -1,1 +1,606 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Lucky Spin Bonus Customer"
+  >
+
+  <title>Lucky Spin Bonus</title>
+
+  <link rel="stylesheet" href="css/spin.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- BACKGROUND EFFECT -->
+  <div class="background-effects" aria-hidden="true">
+
+    <div class="background-grid"></div>
+
+    <div class="glow-circle glow-circle-one"></div>
+    <div class="glow-circle glow-circle-two"></div>
+
+    <span class="particle particle-one"></span>
+    <span class="particle particle-two"></span>
+    <span class="particle particle-three"></span>
+    <span class="particle particle-four"></span>
+    <span class="particle particle-five"></span>
+
+  </div>
+
+  <!-- MAIN PAGE -->
+  <main class="spin-page">
+
+    <!-- HEADER -->
+    <header class="spin-header">
+
+      <a
+        href="index.html"
+        class="brand-area"
+        aria-label="Kembali ke halaman utama"
+      >
+
+        <div class="brand-logo">
+          <img
+            src="assets/logo/all303.webp"
+            alt="Logo Lucky Spin"
+          >
+        </div>
+
+        <div class="brand-text">
+
+          <p>
+            WHEEL OF FORTUNE
+          </p>
+
+          <h1>
+            LUCKY SPIN
+          </h1>
+
+        </div>
+
+      </a>
+
+      <div class="header-status">
+
+        <span class="status-dot"></span>
+
+        <span>
+          Sistem Online
+        </span>
+
+      </div>
+
+    </header>
+
+    <!-- CONTENT -->
+    <section class="spin-container">
+
+      <!-- LEFT PANEL -->
+      <aside class="customer-panel">
+
+        <div class="panel-heading">
+
+          <p class="section-label">
+            REDEEM BONUS
+          </p>
+
+          <h2>
+            Aktifkan Kode Lucky Spin
+          </h2>
+
+          <p>
+            Masukkan username dan kode bonus yang diberikan
+            oleh admin.
+          </p>
+
+        </div>
+
+        <!-- VERIFICATION FORM -->
+        <form
+          class="verification-form"
+          id="verificationForm"
+          novalidate
+        >
+
+          <div class="form-group">
+
+            <label for="spinUsername">
+              Username Customer
+            </label>
+
+            <div class="input-wrapper">
+
+              <span class="input-icon">
+                👤
+              </span>
+
+              <input
+                type="text"
+                id="spinUsername"
+                placeholder="Masukkan username"
+                autocomplete="username"
+                required
+              >
+
+            </div>
+
+            <small
+              class="field-error"
+              id="spinUsernameError"
+            ></small>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="spinCode">
+              Kode Bonus
+            </label>
+
+            <div class="input-wrapper">
+
+              <span class="input-icon">
+                🎟️
+              </span>
+
+              <input
+                type="text"
+                id="spinCode"
+                placeholder="Contoh: SPIN-ABC123-4567"
+                autocomplete="off"
+                spellcheck="false"
+                required
+              >
+
+            </div>
+
+            <small
+              class="field-error"
+              id="spinCodeError"
+            ></small>
+
+          </div>
+
+          <button
+            type="submit"
+            class="verify-button"
+            id="verifyButton"
+          >
+
+            <span class="button-text">
+              Verifikasi Kode
+            </span>
+
+            <span
+              class="button-loader hidden"
+              id="verifyLoader"
+            ></span>
+
+          </button>
+
+        </form>
+
+        <!-- CODE INFORMATION -->
+        <div
+          class="code-information hidden"
+          id="codeInformation"
+        >
+
+          <div class="information-heading">
+
+            <div>
+
+              <p class="section-label">
+                CODE INFORMATION
+              </p>
+
+              <h3>
+                Kode Berhasil Diaktifkan
+              </h3>
+
+            </div>
+
+            <span class="verified-badge">
+              ✓ VALID
+            </span>
+
+          </div>
+
+          <div class="information-list">
+
+            <div class="information-item">
+
+              <span>
+                Username
+              </span>
+
+              <strong id="verifiedUsername">
+                -
+              </strong>
+
+            </div>
+
+            <div class="information-item">
+
+              <span>
+                Kode
+              </span>
+
+              <strong id="verifiedCode">
+                -
+              </strong>
+
+            </div>
+
+            <div class="information-item">
+
+              <span>
+                Hadiah
+              </span>
+
+              <strong id="verifiedReward">
+                -
+              </strong>
+
+            </div>
+
+            <div class="information-item">
+
+              <span>
+                Sisa Spin
+              </span>
+
+              <strong id="remainingSpinText">
+                0
+              </strong>
+
+            </div>
+
+            <div class="information-item">
+
+              <span>
+                Kedaluwarsa
+              </span>
+
+              <strong id="verifiedExpired">
+                -
+              </strong>
+
+            </div>
+
+          </div>
+
+          <button
+            type="button"
+            class="change-code-button"
+            id="changeCodeButton"
+          >
+            Gunakan Kode Lain
+          </button>
+
+        </div>
+
+        <!-- INFORMATION -->
+        <div class="notice-card">
+
+          <div class="notice-icon">
+            💡
+          </div>
+
+          <div>
+
+            <h3>
+              Informasi
+            </h3>
+
+            <p>
+              Satu kesempatan spin akan berkurang setelah roda
+              selesai diputar.
+            </p>
+
+          </div>
+
+        </div>
+
+      </aside>
+
+      <!-- WHEEL PANEL -->
+      <section class="wheel-panel">
+
+        <div class="wheel-heading">
+
+          <p class="section-label">
+            LUCKY WHEEL
+          </p>
+
+          <h2>
+            Putar dan Dapatkan Hadiah
+          </h2>
+
+          <p id="wheelInstruction">
+            Verifikasi kode terlebih dahulu untuk membuka roda.
+          </p>
+
+        </div>
+
+        <!-- WHEEL AREA -->
+        <div class="wheel-stage">
+
+          <div class="wheel-pointer" aria-hidden="true">
+
+            <div class="pointer-light"></div>
+
+            <span>
+              ▼
+            </span>
+
+          </div>
+
+          <div
+            class="wheel-lock-overlay"
+            id="wheelLockOverlay"
+          >
+
+            <div class="wheel-lock-content">
+
+              <span class="lock-icon">
+                🔒
+              </span>
+
+              <h3>
+                Lucky Spin Terkunci
+              </h3>
+
+              <p>
+                Masukkan kode bonus yang valid untuk mulai bermain.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="wheel-outer">
+
+            <div class="wheel-lights" aria-hidden="true">
+
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+
+            </div>
+
+            <div
+              class="wheel"
+              id="wheel"
+              aria-label="Roda Lucky Spin"
+            >
+
+              <canvas
+                id="wheelCanvas"
+                width="700"
+                height="700"
+              ></canvas>
+
+              <div class="wheel-center">
+
+                <div class="wheel-center-logo">
+
+                  <img
+                    src="assets/logo/logo.png"
+                    alt="Logo"
+                  >
+
+                </div>
+
+                <span>
+                  LUCKY
+                </span>
+
+                <strong>
+                  SPIN
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- SPIN CONTROL -->
+        <div class="spin-control">
+
+          <div class="spin-counter">
+
+            <span>
+              Kesempatan Spin
+            </span>
+
+            <strong id="spinCounter">
+              0
+            </strong>
+
+          </div>
+
+          <button
+            type="button"
+            class="spin-button"
+            id="spinButton"
+            disabled
+          >
+
+            <span class="spin-button-icon">
+              🎡
+            </span>
+
+            <span id="spinButtonText">
+              SPIN SEKARANG
+            </span>
+
+          </button>
+
+          <p
+            class="spin-message"
+            id="spinMessage"
+            aria-live="polite"
+          ></p>
+
+        </div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+  <!-- RESULT MODAL -->
+  <div
+    class="result-modal hidden"
+    id="resultModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="resultTitle"
+  >
+
+    <div class="modal-backdrop"></div>
+
+    <div class="result-modal-card">
+
+      <button
+        type="button"
+        class="modal-close-button"
+        id="modalCloseButton"
+        aria-label="Tutup hasil"
+      >
+        ×
+      </button>
+
+      <div class="modal-decoration modal-decoration-one"></div>
+      <div class="modal-decoration modal-decoration-two"></div>
+
+      <div class="result-icon" id="resultIcon">
+        🎉
+      </div>
+
+      <p class="section-label">
+        CONGRATULATIONS
+      </p>
+
+      <h2 id="resultTitle">
+        Selamat!
+      </h2>
+
+      <p class="result-subtitle">
+        Kamu berhasil mendapatkan:
+      </p>
+
+      <div class="result-prize">
+
+        <strong id="resultPrize">
+          -
+        </strong>
+
+      </div>
+
+      <div class="modal-information">
+
+        <div>
+
+          <span>
+            Username
+          </span>
+
+          <strong id="modalUsername">
+            -
+          </strong>
+
+        </div>
+
+        <div>
+
+          <span>
+            Sisa Spin
+          </span>
+
+          <strong id="modalRemainingSpin">
+            0
+          </strong>
+
+        </div>
+
+      </div>
+
+      <button
+        type="button"
+        class="modal-action-button"
+        id="modalActionButton"
+      >
+        Tutup
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- CONFETTI CONTAINER -->
+  <div
+    class="confetti-container"
+    id="confettiContainer"
+    aria-hidden="true"
+  ></div>
+
+  <!-- TOAST -->
+  <div
+    class="toast"
+    id="spinToast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+  <!-- AUDIO -->
+  <audio
+    id="spinAudio"
+    preload="auto"
+  >
+    <source
+      src="assets/audio/spin.mp3"
+      type="audio/mpeg"
+    >
+  </audio>
+
+  <audio
+    id="winAudio"
+    preload="auto"
+  >
+    <source
+      src="assets/audio/win.mp3"
+      type="audio/mpeg"
+    >
+  </audio>
+
+  <script src="js/storage.js"></script>
+  <script src="js/wheel.js"></script>
+  <script src="js/spin.js"></script>
+
+</body>
+</html>
