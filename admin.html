@@ -1,1 +1,809 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Lucky Spin Admin Dashboard"
+  >
+
+  <title>Lucky Spin Admin Dashboard</title>
+
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+      <div class="sidebar-brand">
+
+        <div class="sidebar-logo">
+          <img
+            src="assets/logo/logo.png"
+            alt="Logo Lucky Spin"
+          >
+        </div>
+
+        <div>
+          <h1>LUCKY SPIN</h1>
+          <p>Admin Management</p>
+        </div>
+
+      </div>
+
+      <nav class="sidebar-menu">
+
+        <button
+          type="button"
+          class="menu-item active"
+          data-section="dashboardSection"
+        >
+          <span class="menu-icon">🏠</span>
+          <span>Dashboard</span>
+        </button>
+
+        <button
+          type="button"
+          class="menu-item"
+          data-section="generateSection"
+        >
+          <span class="menu-icon">🎟️</span>
+          <span>Generate Kode</span>
+        </button>
+
+        <button
+          type="button"
+          class="menu-item"
+          data-section="historySection"
+        >
+          <span class="menu-icon">📜</span>
+          <span>Riwayat Kode</span>
+        </button>
+
+        <button
+          type="button"
+          class="menu-item"
+          data-section="rewardSection"
+        >
+          <span class="menu-icon">🎁</span>
+          <span>Daftar Hadiah</span>
+        </button>
+
+        <button
+          type="button"
+          class="menu-item"
+          data-section="settingsSection"
+        >
+          <span class="menu-icon">⚙️</span>
+          <span>Pengaturan</span>
+        </button>
+
+      </nav>
+
+      <div class="sidebar-footer">
+
+        <button
+          type="button"
+          class="logout-button"
+          id="logoutButton"
+        >
+          <span>🚪</span>
+          <span>Logout</span>
+        </button>
+
+      </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+
+        <div class="topbar-left">
+
+          <button
+            type="button"
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            aria-label="Buka menu"
+          >
+            ☰
+          </button>
+
+          <div>
+            <p class="topbar-label">
+              ADMIN PANEL
+            </p>
+
+            <h2 id="pageTitle">
+              Dashboard
+            </h2>
+          </div>
+
+        </div>
+
+        <div class="topbar-right">
+
+          <div class="admin-status">
+            <span class="status-dot"></span>
+            <span>Online</span>
+          </div>
+
+          <div class="admin-profile">
+
+            <div class="admin-avatar">
+              A
+            </div>
+
+            <div>
+              <strong id="adminUsername">
+                Admin
+              </strong>
+
+              <small>
+                Administrator
+              </small>
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+      <!-- CONTENT WRAPPER -->
+      <div class="content-wrapper">
+
+        <!-- DASHBOARD SECTION -->
+        <section
+          class="content-section active"
+          id="dashboardSection"
+        >
+
+          <div class="welcome-panel">
+
+            <div>
+
+              <p class="panel-label">
+                WELCOME BACK
+              </p>
+
+              <h3>
+                Lucky Spin Management System
+              </h3>
+
+              <p>
+                Kelola kode bonus, jumlah spin, hadiah,
+                dan riwayat penggunaan dari satu dashboard.
+              </p>
+
+            </div>
+
+            <div class="welcome-icon">
+              🎡
+            </div>
+
+          </div>
+
+          <div class="stats-grid">
+
+            <article class="stat-card">
+
+              <div class="stat-icon">
+                🎟️
+              </div>
+
+              <div>
+                <p>Total Kode</p>
+                <h3 id="totalCodeStat">0</h3>
+              </div>
+
+            </article>
+
+            <article class="stat-card">
+
+              <div class="stat-icon">
+                ✅
+              </div>
+
+              <div>
+                <p>Kode Aktif</p>
+                <h3 id="activeCodeStat">0</h3>
+              </div>
+
+            </article>
+
+            <article class="stat-card">
+
+              <div class="stat-icon">
+                🔒
+              </div>
+
+              <div>
+                <p>Kode Terpakai</p>
+                <h3 id="usedCodeStat">0</h3>
+              </div>
+
+            </article>
+
+            <article class="stat-card">
+
+              <div class="stat-icon">
+                🎁
+              </div>
+
+              <div>
+                <p>Total Hadiah</p>
+                <h3 id="totalRewardStat">0</h3>
+              </div>
+
+            </article>
+
+          </div>
+
+          <div class="dashboard-grid">
+
+            <article class="dashboard-card">
+
+              <div class="card-header">
+
+                <div>
+                  <p class="card-label">
+                    QUICK ACTION
+                  </p>
+
+                  <h3>
+                    Buat kode bonus baru
+                  </h3>
+                </div>
+
+                <span>
+                  ⚡
+                </span>
+
+              </div>
+
+              <p>
+                Buat kode untuk customer dengan hadiah,
+                jumlah spin, dan masa berlaku tertentu.
+              </p>
+
+              <button
+                type="button"
+                class="primary-action-button"
+                id="quickGenerateButton"
+              >
+                Generate Kode
+              </button>
+
+            </article>
+
+            <article class="dashboard-card">
+
+              <div class="card-header">
+
+                <div>
+                  <p class="card-label">
+                    SYSTEM STATUS
+                  </p>
+
+                  <h3>
+                    Penyimpanan Browser
+                  </h3>
+                </div>
+
+                <span>
+                  💾
+                </span>
+
+              </div>
+
+              <p>
+                Saat ini semua data disimpan menggunakan
+                localStorage pada browser.
+              </p>
+
+              <div class="system-status">
+                <span class="status-dot"></span>
+                <span>LocalStorage aktif</span>
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+        <!-- GENERATE SECTION -->
+        <section
+          class="content-section"
+          id="generateSection"
+        >
+
+          <div class="section-heading">
+
+            <div>
+              <p class="panel-label">
+                BONUS CODE
+              </p>
+
+              <h3>
+                Generate Kode Lucky Spin
+              </h3>
+
+              <p>
+                Tentukan customer, hadiah, jumlah spin,
+                dan masa berlaku kode.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="generate-layout">
+
+            <form
+              class="generate-form"
+              id="generateCodeForm"
+              novalidate
+            >
+
+              <div class="form-grid">
+
+                <div class="form-group">
+
+                  <label for="customerUsername">
+                    Username Customer
+                  </label>
+
+                  <input
+                    type="text"
+                    id="customerUsername"
+                    placeholder="Contoh: member123"
+                    autocomplete="off"
+                    required
+                  >
+
+                  <small
+                    class="field-error"
+                    id="customerUsernameError"
+                  ></small>
+
+                </div>
+
+                <div class="form-group">
+
+                  <label for="rewardSelect">
+                    Pilih Hadiah
+                  </label>
+
+                  <select
+                    id="rewardSelect"
+                    required
+                  >
+
+                    <option value="">
+                      Pilih hadiah
+                    </option>
+
+                    <option value="SALDO 10.000">
+                      SALDO 10.000
+                    </option>
+
+                    <option value="SALDO 20.000">
+                      SALDO 20.000
+                    </option>
+
+                    <option value="SALDO 50.000">
+                      SALDO 50.000
+                    </option>
+
+                    <option value="SALDO 100.000">
+                      SALDO 100.000
+                    </option>
+
+                    <option value="JACKPOT 500.000">
+                      JACKPOT 500.000
+                    </option>
+
+                    <option value="ZONK">
+                      ZONK
+                    </option>
+
+                  </select>
+
+                  <small
+                    class="field-error"
+                    id="rewardError"
+                  ></small>
+
+                </div>
+
+                <div class="form-group">
+
+                  <label for="spinAmount">
+                    Jumlah Spin
+                  </label>
+
+                  <input
+                    type="number"
+                    id="spinAmount"
+                    min="1"
+                    max="20"
+                    value="1"
+                    required
+                  >
+
+                  <small
+                    class="field-error"
+                    id="spinAmountError"
+                  ></small>
+
+                </div>
+
+                <div class="form-group">
+
+                  <label for="expiredDate">
+                    Tanggal Kedaluwarsa
+                  </label>
+
+                  <input
+                    type="date"
+                    id="expiredDate"
+                    required
+                  >
+
+                  <small
+                    class="field-error"
+                    id="expiredDateError"
+                  ></small>
+
+                </div>
+
+              </div>
+
+              <div class="form-group full-width">
+
+                <label for="adminNote">
+                  Catatan Admin
+                </label>
+
+                <textarea
+                  id="adminNote"
+                  rows="4"
+                  placeholder="Catatan tambahan untuk kode ini..."
+                ></textarea>
+
+              </div>
+
+              <button
+                type="submit"
+                class="generate-button"
+                id="generateButton"
+              >
+                <span>
+                  Generate Kode
+                </span>
+              </button>
+
+            </form>
+
+            <aside
+              class="generated-result"
+              id="generatedResult"
+            >
+
+              <p class="panel-label">
+                GENERATED CODE
+              </p>
+
+              <div class="empty-result" id="emptyResult">
+
+                <span>
+                  🎟️
+                </span>
+
+                <h4>
+                  Belum ada kode
+                </h4>
+
+                <p>
+                  Isi formulir lalu klik Generate Kode.
+                </p>
+
+              </div>
+
+              <div
+                class="result-content hidden"
+                id="resultContent"
+              >
+
+                <div class="generated-code-box">
+
+                  <span>
+                    Kode Bonus
+                  </span>
+
+                  <strong id="generatedCode">
+                    -
+                  </strong>
+
+                </div>
+
+                <div class="result-details">
+
+                  <div>
+                    <span>Username</span>
+                    <strong id="resultUsername">-</strong>
+                  </div>
+
+                  <div>
+                    <span>Hadiah</span>
+                    <strong id="resultReward">-</strong>
+                  </div>
+
+                  <div>
+                    <span>Jumlah Spin</span>
+                    <strong id="resultSpin">-</strong>
+                  </div>
+
+                  <div>
+                    <span>Kedaluwarsa</span>
+                    <strong id="resultExpired">-</strong>
+                  </div>
+
+                </div>
+
+                <button
+                  type="button"
+                  class="copy-code-button"
+                  id="copyCodeButton"
+                >
+                  📋 Salin Kode
+                </button>
+
+                <p
+                  class="copy-message"
+                  id="copyMessage"
+                ></p>
+
+              </div>
+
+            </aside>
+
+          </div>
+
+        </section>
+
+        <!-- HISTORY SECTION -->
+        <section
+          class="content-section"
+          id="historySection"
+        >
+
+          <div class="section-heading">
+
+            <div>
+              <p class="panel-label">
+                CODE HISTORY
+              </p>
+
+              <h3>
+                Riwayat Kode
+              </h3>
+
+              <p>
+                Daftar semua kode bonus yang pernah dibuat.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              class="danger-button"
+              id="clearHistoryButton"
+            >
+              Hapus Semua
+            </button>
+
+          </div>
+
+          <div class="table-card">
+
+            <div class="table-responsive">
+
+              <table>
+
+                <thead>
+                  <tr>
+                    <th>Kode</th>
+                    <th>Username</th>
+                    <th>Hadiah</th>
+                    <th>Spin</th>
+                    <th>Kedaluwarsa</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+
+                <tbody id="codeHistoryBody">
+
+                  <tr class="empty-table-row">
+                    <td colspan="7">
+                      Belum ada riwayat kode.
+                    </td>
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- REWARD SECTION -->
+        <section
+          class="content-section"
+          id="rewardSection"
+        >
+
+          <div class="section-heading">
+
+            <div>
+              <p class="panel-label">
+                REWARD LIST
+              </p>
+
+              <h3>
+                Daftar Hadiah Lucky Spin
+              </h3>
+
+              <p>
+                Hadiah yang tersedia untuk kode bonus.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="reward-grid">
+
+            <article class="reward-card">
+              <span>🎟️</span>
+              <h4>SALDO 10.000</h4>
+            </article>
+
+            <article class="reward-card">
+              <span>🎟️</span>
+              <h4>SALDO 20.000</h4>
+            </article>
+
+            <article class="reward-card">
+              <span>💰</span>
+              <h4>SALDO 50.000</h4>
+            </article>
+
+            <article class="reward-card">
+              <span>💰</span>
+              <h4>SALDO 100.000</h4>
+            </article>
+
+            <article class="reward-card">
+              <span>💎</span>
+              <h4>JACKPOT 500.000</h4>
+            </article>
+
+            <article class="reward-card">
+              <span>😅</span>
+              <h4>ZONK</h4>
+            </article>
+
+          </div>
+
+        </section>
+
+        <!-- SETTINGS SECTION -->
+        <section
+          class="content-section"
+          id="settingsSection"
+        >
+
+          <div class="section-heading">
+
+            <div>
+              <p class="panel-label">
+                SETTINGS
+              </p>
+
+              <h3>
+                Pengaturan Sistem
+              </h3>
+
+              <p>
+                Pengaturan dasar untuk proyek latihan.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="settings-card">
+
+            <div class="setting-item">
+
+              <div>
+                <h4>Mode Penyimpanan</h4>
+                <p>Data tersimpan di browser lokal.</p>
+              </div>
+
+              <span class="setting-badge">
+                LocalStorage
+              </span>
+
+            </div>
+
+            <div class="setting-item">
+
+              <div>
+                <h4>Status Proyek</h4>
+                <p>Digunakan untuk latihan GitHub Pages.</p>
+              </div>
+
+              <span class="setting-badge">
+                Training
+              </span>
+
+            </div>
+
+            <div class="setting-item">
+
+              <div>
+                <h4>Versi Sistem</h4>
+                <p>Lucky Spin Management System.</p>
+              </div>
+
+              <span class="setting-badge">
+                v1.0.0
+              </span>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+  ></div>
+
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/admin.js"></script>
+
+</body>
+</html>
