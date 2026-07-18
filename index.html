@@ -1,68 +1,218 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
+  <meta charset="UTF-8">
 
-<meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Lucky Spin Admin Management Panel"
+  >
 
-<title>Lucky Spin Admin Login</title>
+  <title>Lucky Spin Admin Login</title>
 
-<link rel="stylesheet" href="css/login.css">
-
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-<div class="login-box">
+  <main class="login-page">
 
-<img
-src="assets/logo/logo.png"
-class="logo">
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
 
-<h1>LUCKY SPIN</h1>
+    <div class="particle particle-one"></div>
+    <div class="particle particle-two"></div>
+    <div class="particle particle-three"></div>
+    <div class="particle particle-four"></div>
 
-<p>ADMIN PANEL</p>
+    <section class="login-card">
 
-<form id="loginForm">
+      <div class="card-corner corner-top-left"></div>
+      <div class="card-corner corner-top-right"></div>
+      <div class="card-corner corner-bottom-left"></div>
+      <div class="card-corner corner-bottom-right"></div>
 
-<div class="input-group">
+      <div class="brand-section">
 
-<label>Username</label>
+        <div class="logo-wrapper">
+          <img
+            src="assets/logo/all303.webp"
+            alt="Logo Lucky Spin"
+            class="brand-logo"
+            id="brandLogo"
+          >
+        </div>
 
-<input
-type="text"
-id="username"
-placeholder="Masukkan Username">
+        <p class="brand-label">
+          ADMIN MANAGEMENT SYSTEM
+        </p>
 
-</div>
+        <h1>
+          LUCKY SPIN
+        </h1>
 
-<div class="input-group">
+        <p class="brand-subtitle">
+          Bonus Code Management Panel
+        </p>
+      </div>
 
-<label>Password</label>
+      <div class="divider">
+        <span></span>
+        <i></i>
+        <span></span>
+      </div>
 
-<input
-type="password"
-id="password"
-placeholder="Masukkan Password">
+      <form id="loginForm" novalidate>
 
-</div>
+        <div class="form-group">
 
-<button>
+          <label for="username">
+            Username Admin
+          </label>
 
-LOGIN
+          <div class="input-container">
 
-</button>
+            <span class="input-icon">
+              👤
+            </span>
 
-</form>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Masukkan username"
+              autocomplete="username"
+              required
+            >
 
-</div>
+          </div>
 
-<script src="js/login.js"></script>
+          <small
+            id="usernameError"
+            class="field-error"
+          ></small>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="password">
+            Password
+          </label>
+
+          <div class="input-container">
+
+            <span class="input-icon">
+              🔒
+            </span>
+
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Masukkan password"
+              autocomplete="current-password"
+              required
+            >
+
+            <button
+              type="button"
+              id="togglePassword"
+              class="password-toggle"
+              aria-label="Tampilkan password"
+            >
+              👁
+            </button>
+
+          </div>
+
+          <small
+            id="passwordError"
+            class="field-error"
+          ></small>
+
+        </div>
+
+        <div class="login-options">
+
+          <label class="remember-wrapper">
+
+            <input
+              type="checkbox"
+              id="rememberAdmin"
+            >
+
+            <span class="custom-checkbox"></span>
+
+            <span>
+              Ingat saya
+            </span>
+
+          </label>
+
+          <span class="secure-label">
+            🔐 Secure Login
+          </span>
+
+        </div>
+
+        <button
+          type="submit"
+          id="loginButton"
+          class="login-button"
+        >
+          <span class="button-text">
+            Masuk ke Dashboard
+          </span>
+
+          <span class="button-loader hidden"></span>
+        </button>
+
+        <p
+          id="loginMessage"
+          class="login-message"
+          aria-live="polite"
+        ></p>
+
+      </form>
+
+      <div class="login-info">
+
+        <div class="info-item">
+          <span>●</span>
+          <p>Panel latihan GitHub Pages</p>
+        </div>
+
+        <div class="info-item">
+          <span>●</span>
+          <p>Data tersimpan di browser</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <footer class="login-footer">
+
+      <p>
+        Lucky Spin Management System
+      </p>
+
+      <span>
+        © 2026 — Training Project
+      </span>
+
+    </footer>
+
+  </main>
+
+  <script src="js/login.js"></script>
 
 </body>
-
 </html>
